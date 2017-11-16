@@ -1,0 +1,7 @@
+#!/bin/bash
+curl -s --user "api:$MAILGUN_API_KEY" \
+https://api.mailgun.net/v3/$MAILGUN_DOMAIN/messages \
+ -F from="no-reply <no-reply@$MAILGUN_DOMAIN>" \
+ -F to="$1" \
+ -F subject="$2" \
+ -F text="$3"
